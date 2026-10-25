@@ -1,105 +1,69 @@
-// Efek mengetik
+// Animasi scroll muncul
 
-const text = "Fresh Talent | Siap Berkembang | Engineer Mindset";
-
-let index = 0;
-
-function typing(){
-
-    if(index < text.length){
-
-        document.querySelector(".hero-text h3").innerHTML += text.charAt(index);
-
-        index++;
-
-        setTimeout(typing,80);
-
-    }
-
-}
-
-document.querySelector(".hero-text h3").innerHTML = "";
-
-typing();
-
-
-
-// Animasi saat scroll
-
-const items = document.querySelectorAll(
-"section, .skill, .profile img"
+const elements = document.querySelectorAll(
+".hero-text, .profile-box, section, .skills div, .card"
 );
 
 
 window.addEventListener("scroll",()=>{
 
+elements.forEach((el)=>{
 
-items.forEach(item=>{
+const posisi = el.getBoundingClientRect().top;
 
-
-let posisi =
-item.getBoundingClientRect().top;
-
-
-let tinggi =
-window.innerHeight;
+const tinggi = window.innerHeight;
 
 
 if(posisi < tinggi - 100){
 
-item.style.opacity="1";
+el.style.opacity="1";
 
-item.style.transform="translateY(0)";
-
+el.style.transform="translateY(0)";
 
 }
 
+});
 
 });
 
 
-});
+// posisi awal
 
+elements.forEach((el)=>{
 
+el.style.opacity="0";
 
-// Posisi awal animasi
+el.style.transform="translateY(50px)";
 
-items.forEach(item=>{
-
-
-item.style.opacity="0";
-
-item.style.transform=
-"translateY(50px)";
-
-
-item.style.transition=
-"all .8s ease";
-
+el.style.transition="0.8s ease";
 
 });
 
 
 
-// Efek parallax foto profil
+// Efek gerak 3D foto profil
+
+const profile =
+document.querySelector(".profile-box");
+
 
 document.addEventListener("mousemove",(e)=>{
 
 
-const img =
-document.querySelector(".profile img");
-
+if(profile){
 
 let x =
-(e.clientX / window.innerWidth - .5) * 20;
+(e.clientX/window.innerWidth-.5)*15;
 
 
 let y =
-(e.clientY / window.innerHeight - .5) * 20;
+(e.clientY/window.innerHeight-.5)*15;
 
 
-img.style.transform =
-`translate(${x}px,${y}px)`;
+profile.style.transform =
+`rotateY(${x}deg) rotateX(${-y}deg)`;
+
+}
 
 
 });
