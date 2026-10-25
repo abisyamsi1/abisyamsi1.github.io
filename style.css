@@ -9,16 +9,28 @@
 
 body{
 
-    background:
-    linear-gradient(
-    135deg,
-    #020617,
-    #001f3f,
-    #000000
-    );
+background:
 
-    color:white;
-    overflow-x:hidden;
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,10,30,.75)
+),
+
+url("background-tech.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+
+color:white;
+
+overflow-x:hidden;
+
+}
 
 }
 
