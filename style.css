@@ -840,4 +840,82 @@ flex-direction:column;
 }
 
 
+}
+
+/* Skill Card Professional */
+
+.skill-card{
+
+background:
+rgba(255,255,255,0.08);
+
+border:
+1px solid rgba(0,217,255,0.4);
+
+border-radius:25px;
+
+padding:30px;
+
+text-align:center;
+
+backdrop-filter:blur(15px);
+
+transition:.4s;
+
+}
+
+
+.skill-card img{
+
+width:75px;
+
+height:75px;
+
+object-fit:contain;
+
+margin-bottom:20px;
+
+filter:
+drop-shadow(0 0 15px #00d9ff);
+
+}
+
+
+
+.skill-card h3{
+
+color:#00d9ff;
+
+margin-bottom:10px;
+
+font-size:22px;
+
+}
+
+
+
+.skill-card p{
+
+color:#ddd;
+
+font-size:15px;
+
+}
+
+
+
+.skill-card:hover{
+
+transform:
+
+translateY(-15px)
+scale(1.05);
+
+
+box-shadow:
+
+0 0 35px #00d9ff;
+
+border-color:#00d9ff;
+
     }
