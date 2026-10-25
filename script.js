@@ -1,37 +1,35 @@
-AOS.init({
-    duration:1000,
-    once:true
-});
+// Animasi muncul saat scroll
 
-new Typed(".typing",{
-    strings:[
-        "Abi Syamsi A",
-        "Administrator",
-        "Warehouse Staff",
-        "Fast Learner"
-    ],
-    typeSpeed:80,
-    backSpeed:50,
-    backDelay:2000,
-    loop:true
-});
+const elements = document.querySelectorAll(
+    "section, .skill, .profile img, .hero-text"
+);
 
-particlesJS("particles-js",{
-    particles:{
-        number:{value:70},
-        color:{value:"#00e5ff"},
-        shape:{type:"circle"},
-        opacity:{value:0.4},
-        size:{value:3},
-        move:{
-            enable:true,
-            speed:2
-        },
-        line_linked:{
-            enable:true,
-            distance:150,
-            color:"#00e5ff",
-            opacity:0.3
+window.addEventListener("scroll", () => {
+
+    elements.forEach((element) => {
+
+        const position = element.getBoundingClientRect().top;
+
+        const screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+
         }
-    }
+
+    });
+
+});
+
+
+// Efek awal animasi
+
+elements.forEach((element)=>{
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(40px)";
+    element.style.transition = "0.8s";
+
 });
