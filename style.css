@@ -41,7 +41,7 @@ url("background-tech.jpg");
 
 background-size:cover;
 
-background-position:center;
+background-position:40% center;
 
 background-repeat:no-repeat;
 
@@ -1031,7 +1031,7 @@ body::after{
 
 background-size:auto 100%;
 
-background-position:center;
+background-position:center top;
 
 }
 
